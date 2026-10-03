@@ -1,12 +1,85 @@
 :root {
-  --red:#b90e31; --gold:#fabd0f; --blue:#002452;
+  --red: #b90e31;
+  --blue: #002452;
+  --light: #f4f5f7;
+  --dark: #1a1a1a;
 }
-body { font-family: system-ui, sans-serif; margin:0; background:var(--red); color:#fff; }
-header { background:var(--blue); color:#fff; padding:1rem; }
-main { background:#fff; color:#1a1a1a; max-width:900px; margin:2rem auto; border-radius:12px; padding:1.5rem; }
-a { color: var(--blue); }
-/* === personalize below by changing colors or spacing === */
-/* example: make headings blue and a bit larger */
-h2 { color: var(--blue); font-size: 1.6rem; }
-/* example: make your photo round */
-img { border-radius: 12px; }
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--blue);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom: 6px solid var(--red);
+}
+
+header h1 {
+  margin: 0.25rem 0;
+}
+
+main {
+  background: #fff;
+  color: var(--dark);
+  max-width: 900px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 36, 82, 0.12);
+}
+
+h2 {
+  color: var(--red);
+  font-size: 1.6rem;
+  border-bottom: 3px solid var(--blue);
+  padding-bottom: 0.25rem;
+}
+
+/* round photo with a red border, centred, shrinks on small screens */
+img {
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  border: 4px solid var(--red);
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+a {
+  color: var(--blue);
+}
+
+a:hover,
+a:focus {
+  color: var(--red);
+}
+
+footer {
+  text-align: center;
+  padding: 0 1rem 1.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* phones: smaller outer margin so the white card uses more of the screen */
+@media (max-width: 600px) {
+  main {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  h2 {
+    font-size: 1.35rem;
+  }
+}
